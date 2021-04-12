@@ -14,11 +14,9 @@ $body-font: 'Lexend Deca', sans-serif;
 }
 
 body {
-    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed;
     width: 100vw;
     height: 100vh;
 }
@@ -40,10 +38,11 @@ p {
 
 input {
     font-family: $body-font;
-    margin-top: 10em;
-    border: 3px none $light-gray;
+    border: 2px solid $light-gray;
     border-radius: 30px;
     padding: 1rem 2rem;
+    margin-top: 10em;
+    outline: none;
 }
 
 body, input {
@@ -51,14 +50,12 @@ body, input {
 }
 
 .container {
-    position: fixed;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
 
     .row {
-        // margin: 1rem 0;
         padding: 3em;
         height: auto;
         width: 350px;
@@ -73,6 +70,11 @@ body, input {
             color: $sedan;
             cursor: pointer;
         }
+
+        .btn-sedan:hover {
+            background-color: $sedan;
+            color: $white;
+        }
     }
     
     .suv {
@@ -81,6 +83,11 @@ body, input {
         .btn-suv {
             color: $suv;
             cursor: pointer;
+        }
+
+        .btn-suv:hover {
+            background-color: $suv;
+            color: $white;
         }
     }
     
@@ -91,6 +98,11 @@ body, input {
         .btn-lux {
             color: $luxury;
             cursor: pointer;
+        }
+
+        .btn-lux:hover {
+            background-color: $luxury;
+            color: $white;
         }
     }
 }
@@ -103,7 +115,24 @@ body, input {
     bottom: 0;
 }
 
+@media only screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
 
+        .sedan {
+            border-radius: 10px 10px 0 0;
+        }
+    
+        .lux {
+            border-radius: 0 0 10px 10px;
+        }
+    }
+
+    /* attribution */
+    .attribution {
+
+    }
+}
 
 
 
